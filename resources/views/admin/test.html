@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart.js and Morris.js Charts</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+    <style>
+        canvas {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .morris-hover {
+            position:absolute;
+            z-index:1000;
+        }
+
+        .morris-hover.morris-default-style {
+            border-radius:10px;
+            padding:6px;
+            color:#666;
+            background:rgba(255, 255, 255, 0.8);
+            border:solid 2px rgba(230, 230, 230, 0.8);
+            font-family:sans-serif;
+            font-size:12px;
+            text-align:center;
+        }
+
+        .morris-hover.morris-default-style .morris-hover-row-label {
+            font-weight:bold;
+            margin:0.25em 0;
+        }
+
+        .morris-hover.morris-default-style .morris-hover-point {
+            white-space:nowrap;
+            margin:0.1em 0;
+        }
+
+        svg {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myChart"></canvas>
+    <canvas id="myChart1"></canvas>
+
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <div id="bar-chart"></div>
+            </div>
+            <div class="col-md-8">
+                <div id="line-chart"></div>
+            </div>
+            <div class="col-md-8">
+                <div id="area-chart"></div>
+            </div>
+            <div class="col-md-4">
+                <div id="donut-chart"></div>
+            </div>
+            <div class="col-md-8">
+                <div id="pie-chart"></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Pie Chart data and options
+        const pieChartData = {
+            labels: ['Room', 'Party', 'Sports'],
+            datasets: [{
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)'
+                ],
+                hoverBackgroundColor: [
+                    "#7460ee",
+                    "#fc4b6c",
+                    "#26c6da"
+                ],
+                data: [40, 30, 20]
+            }]
+        };
+
+        const pieChartOptions = {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Chart.js Pie Chart'
+                }
+            }
+        };
+
+        // Initialize Pie Chart
+        const ctx = document.getElementById('myChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'pie',
+            data: pieChartData,
+            options: pieChartOptions
+        });
+
+        // Line Chart data and options
+        const lineChartData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'My First Dataset',
+                data: [300, 59, 80, 81, 56, 55, 40],
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            }]
+        };
+
+        const lineChartOptions = {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Chart.js Line Chart'
+                }
+            }
+        };
+
+        // Initialize Line Chart
+        const ctx1 = document.getElementById('myChart1').getContext('2d');
+        new Chart(ctx1, {
+            type: 'line',
+            data: lineChartData,
+            options: lineChartOptions
+        });
+    </script>
+</body>
+</html>
