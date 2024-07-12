@@ -54,7 +54,7 @@
 @endif  
 </td>   
 
-
+    
 <td>
             <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> @lang('view_pages.action')
                     
