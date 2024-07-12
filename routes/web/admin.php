@@ -87,6 +87,11 @@ Route::middleware('auth:web')->group(function () {
     });
 
     Route::namespace('Admin')->group(function () {
+        Route::group(['prefix' => 'branch'], function () {
+            Route::get('/','Tripta\BranchController@index');
+            Route::get('/fetch','Tripta\BranchController@fetch');
+        });
+        
         Route::get('dispatcher-request','AdminViewController@dispatchRequest');
     // Owner Management (Company Management)
     Route::group(['prefix' => 'owners'], function () {

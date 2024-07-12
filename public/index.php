@@ -1,6 +1,6 @@
 <?php
-phpinfo();
-exit;
+// phpinfo();
+// exit;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 

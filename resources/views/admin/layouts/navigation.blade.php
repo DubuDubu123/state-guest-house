@@ -81,6 +81,37 @@ if(str_contains((string)request()->path(),'translations')){
         </ul>
       </li>
       @endif
+
+
+      @if(auth()->user()->can('view-settings'))
+      <li class="treeview {{ 'masters' == $main_menu ? 'active menu-open' : '' }}">
+        <a href="javascript: void(0);">
+        <i class="fa fa-users" aria-hidden="true"></i>
+          <span> Master Data</span>  
+          <span class="pull-right-container">
+            <i class="fa fa-angle-right pull-right"></i>
+          </span>
+        </a>
+
+        <ul class="treeview-menu"> 
+        <li class="{{'branch' == $sub_menu ? 'active' : '' }}">
+        <a href="{{url('/branch')}}">
+                <i class="fa fa-user-circle-o"></i> <span>Branch</span>
+              </a>
+            </li>  
+            <li class="{{'room_types' == $sub_menu ? 'active' : '' }}">
+            <a href="{{url('/users/room-types')}}">
+            <i class="fa fa-user-plus" aria-hidden="true"></i>  
+            <span>Room Type</span></a>
+          </li> 
+          <li class="{{'room' == $sub_menu ? 'active' : '' }}">
+              <a href="{{url('/room')}}">
+                <i class="fa fa-user-circle-o"></i> <span>Room</span>
+              </a>
+            </li>   
+        </ul>
+      </li>
+      @endif
  
       
       
