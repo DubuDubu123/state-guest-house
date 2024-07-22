@@ -651,5 +651,8 @@ $overallEarnings = array_reverse($overallEarnings);
         return view('dispatch-new.login',compact('recaptcha_enabled'));
     }
 
+    public function create(){
+        
+    }
  }
  

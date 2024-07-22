@@ -171,6 +171,12 @@ span.select2.select2-container.select2-container--default.select2-container--bel
                                         @lang('view_pages.search')
                                     </button>
                                 </div> 
+                                <div class="col-md-7 text-center text-md-right">
+                                <a href="{{ url('branch/create') }}" class="btn btn-primary btn-sm">
+                                    <i class="mdi mdi-plus-circle mr-2"></i>Add Branch</a>
+                                <!--  <a class="btn btn-danger">
+                            Export</a> -->
+                            </div>
                                 <!-- <div class="col-md-7 text-center text-md-left">
                                 <    class="btn btn-outline btn-sm btn-danger py-2 filter_request" type="button" data-toggle="modal" data-target="#request-modal">
                                     Filter Requests                                </button>

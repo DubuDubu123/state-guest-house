@@ -15,7 +15,7 @@ class CreateBranchTable extends Migration
     {
         Schema::create('branch', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
+            $table->string('tittle');
             $table->string('location');
             $table->integer('status')->default(1);
             $table->timestamps();
@@ -24,7 +24,6 @@ class CreateBranchTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
      * @return void
      */
     public function down()

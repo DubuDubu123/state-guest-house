@@ -76,6 +76,7 @@
                 $("#search_keyword").keypress(function(e){
                     // e.preventDefault();
                     if(e.which == 13)
+                    
                     {
                         search_keyword = $('#search_keyword').val();
                     console.log(search_keyword);

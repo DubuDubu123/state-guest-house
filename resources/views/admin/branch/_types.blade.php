@@ -48,7 +48,7 @@
 <td> {{$result->location}}</td>  
 <td>
 @if($result->status == 0) 
-    <button class="btn btn-success btn-sm" style="  background: red;   border-color: transparent;">Inactive</button>
+    <button class="btn btn-success btn-sm" style="  background: red;   border-color: transparent;">inactive</button>
 @else
     <button class="btn btn-success btn-sm" style="  background: #ff9900;   border-color: transparent;">Active</button>
 @endif  
@@ -60,11 +60,16 @@
                     
                     </button>
                     <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{url('requests',$result->id)}}">
-                            <i class="fa fa-eye"></i>Edit</a>                      
-                            <a class="dropdown-item" href="{{url('requests/track_reqest',$result->id)}}">
+                            <a class="dropdown-item" href="{{url('branch/edit',$result->id)}}">
+                            <i class="fa fa-eye"></i>Edit</a>  
+                                                
+                            <a class="dropdown-item" href="{{url('branch/active',$result->id)}}">
                             <i class="fa fa-eye"></i>Active</a>
-                            <a class="dropdown-item" target="_blank" href="{{url('requests/delete',$result->id)}}">
+
+                            <a class="dropdown-item" href="{{url('branch/inactive',$result->id)}}">
+                            <i class="fa fa-eye"></i>inactive</a>
+
+                            <a class="dropdown-item" target="_blank" href="{{url('branch/delete',$result->id)}}">
                             <i class="fa fa-trash-o"></i>@lang('view_pages.delete')</a>
                             
                     </div>
@@ -80,3 +85,7 @@
 {{$results->links()}}
 </span>
 </div></div></div>
+
+
+
+

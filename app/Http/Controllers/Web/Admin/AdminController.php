@@ -150,7 +150,7 @@ class AdminController extends BaseController
 
             return redirect('admins/edit/')->with('warning', $message);
         }
-        
+         
          if($request->role == "mess-manager")
         { 
             $admins = User::where('email',$request->email)->doesNotBelongToRole(RoleSlug::MESS_MANAGER)->get();

@@ -90,6 +90,12 @@ Route::middleware('auth:web')->group(function () {
         Route::group(['prefix' => 'branch'], function () {
             Route::get('/','Tripta\BranchController@index');
             Route::get('/fetch','Tripta\BranchController@fetch');
+            Route::get('/create', 'Tripta\BranchController@create');
+            Route::post('/store', 'Tripta\BranchController@store');
+            Route::get('/edit/{id}', 'Tripta\BranchController@edit');
+            Route::post('/update', 'Tripta\BranchController@update');
+            Route::get('/delete/{id}', 'Tripta\BranchController@delete');
+            Route::get('/inactive/{id}', 'Tripta\BranchController@inactive');
         });
         
         Route::get('dispatcher-request','AdminViewController@dispatchRequest');
